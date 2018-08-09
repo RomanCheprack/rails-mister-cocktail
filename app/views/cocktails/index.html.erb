@@ -1,12 +1,11 @@
 <h1>ALL COCKTAILS</h1>
 
-<%= cl_image_tag("cnriphoywnwjmcu62d4l",
-      width: 400, height: 300, crop: :fill) %>
+
 
 <div class="container">
   <div class="row">
+    <div class="col-xs-12 col-sm-4">
     <% @cocktails.each do |cocktail| %>
-        <div class="col-xs-12 col-sm-4">
           <div class="card">
           <h3><%= link_to cocktail.name, cocktail %></h3>
         <% end %>
