@@ -1,11 +1,30 @@
-<h1>MY COCKTAIL</h1>
 
-<h1><%= @cocktail.name %></h1>
 
-<h4>This cocktail is made of:</h4>
-<% @cocktail.doses.each do |dose| %>
-<p><%= dose.description %> of <%= dose.ingredient.name %></p>
-<% end %>
 
-<%= link_to "+ add a new dose", new_cocktail_dose_path(@cocktail) %>
-<%= link_to "back", cocktails_path %>
+
+
+
+
+
+
+
+
+
+<div class="container text-center">
+  <div class="row">
+    <h1><%= @cocktail.name %></h1>
+    <h4>This cocktail is made of:</h4>
+    <% @cocktail.doses.each do |dose| %>
+        <h5><%= dose.description %> of <%= dose.ingredient.name %></h5>
+        <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  </div>
+  <%= link_to "Add dose", new_cocktail_dose_path(@cocktail) %>
+</div>
+<div>
+
+</div>
+
+<div>
+  <%= link_to "back", cocktails_path, class:"button-back" %>
+</div>

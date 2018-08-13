@@ -1,18 +1,32 @@
-<h1>ALL COCKTAILS</h1>
-
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-    <% @cocktails.each do |cocktail| %>
-          <div class="card">
-          <h3><%= link_to cocktail.name, cocktail %></h3>
-        <% end %>
-      </div>
-    </div>
+<header class="header">
+  <div class="header__text-box">
+    <h1 class="heading-primary">
+      <span class="heading-primary--main">Cocktails</span>
+      <span class="heading-primary--sub">is when life happens</span>
+    </h1>
+    <%= link_to "Discover Our Beverages", new_cocktail_path, class:"btn btn--white btn--animated" %>
   </div>
-</div>
 
-<%= link_to "Create cocktail", new_cocktail_path %>
+</header>
+
+
+
+<div class="container-fluid text-center">
+  <h1>ALL COCKTAILS</h1>
+  <div class="row justify-content-center">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-margin col-xs-12 col-sm-4 ">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-inner-margin">
+              <h5  class="card-title-link"><%= link_to cocktail.name, cocktail %></h5>
+              <p class="card-text">lorem ipsom bla bla lo yodea ma ani fi,c cjkk</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Create cocktail", new_cocktail_path, class: "btn btn-primary" %>
+</div>
 
